@@ -6,7 +6,7 @@
   <title>Javascript Testing Logic</title>
 </head>
 <body>
-  This is before the script! 
+  <h1>This is before the script!</h1>
   <script>
     // declaring variables values array for global use
     var lowerCase = [`a`, `b`, `c`, `d`, `e`, `f`, `g`, `h`, `i`, `j`, `k`, `l`, 'm', `n`, `o`, `p`, 'q', `r`, `s`, `t`, `u`, `v`, `w`, `x`, `y`, `z`];
@@ -22,17 +22,17 @@
     var length;
 
     length = parseInt(prompt(`Enter the desired password length from 8 to 128 characters.`));
-    if (length >= 8 && length <= 128) {
-      alert( `You selected ` + length );
-    } else if {
-      alert(`You have to choose between 8 and 128 characters!`);
-    } else {
-      lower = confirm(`Do you want lowercase (abc) characters in your password?`);
-      upper = confirm(`Do you want UPPERCASE (ABC) characters in your password?`);
-      number = confirm(`Do you want NUMBERS (123) in your password?`);
-      special = confirm(`Do you want special characters (*%@) in your password?`);
+    while(length < 8 || length > 128) {
+      length = parseInt(prompt(`You must choose password length from 8 to 128 characters!`));
     }
 
+    //  lower = confirm(`Do you want lowercase (abc) characters in your password?`);
+    //  upper = confirm(`Do you want UPPERCASE (ABC) characters in your password?`);
+    //  number = confirm(`Do you want NUMBERS (123) in your password?`);
+    //  special = confirm(`Do you want special characters (*%@) in your password?`);
+    //}
+
   </script>
+  <h2>This is after the script!</h2>
 </body>
 </html>
