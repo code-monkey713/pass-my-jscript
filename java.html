@@ -1,10 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Javascript Testing Logic</title>
 </head>
+
 <body>
   <h1>This is before the script!</h1>
   <script>
@@ -22,17 +24,25 @@
     var length;
 
     length = parseInt(prompt(`Enter the desired password length from 8 to 128 characters.`));
-    while(length < 8 || length > 128) {
+    while (length < 8 || length > 128 || length === `NaN`) {
       length = parseInt(prompt(`You must choose password length from 8 to 128 characters!`));
     }
-
-    //  lower = confirm(`Do you want lowercase (abc) characters in your password?`);
-    //  upper = confirm(`Do you want UPPERCASE (ABC) characters in your password?`);
-    //  number = confirm(`Do you want NUMBERS (123) in your password?`);
-    //  special = confirm(`Do you want special characters (*%@) in your password?`);
-    //}
-
+    alert(`Your password will contain ${length} characters.`);
+    
+    lower = confirm(`Do you want lowercase (abc) characters in your password?`);
+    upper = confirm(`Do you want UPPERCASE (ABC) characters in your password?`);
+    number = confirm(`Do you want NUMBERS (123) in your password?`);
+    special = confirm(`Do you want special characters (*%@) in your password?`);
+    
+    while (lower === false && upper === false && number === false && special === false) {
+      lower = confirm(`Do you want lowercase (abc) characters in your password?`);
+      upper = confirm(`Do you want UPPERCASE (ABC) characters in your password?`);
+      number = confirm(`Do you want NUMBERS (123) in your password?`);
+      special = confirm(`Do you want special characters (*%@) in your password?`);
+    }
+    
   </script>
   <h2>This is after the script!</h2>
 </body>
+
 </html>
