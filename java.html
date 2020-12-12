@@ -52,47 +52,49 @@
       return randomString;
     }
 
-    //length = parseInt(prompt(`Enter the desired password length from 8 to 128 characters.`));
-    //while (length < 8 || length > 128 || length === `NaN`) {
-    //  if (isNaN(length)) {
-    //    alert(`You must enter a number!`);
-    //  }
-    //  alert(`You must choose password length from 8 to 128 characters!`);
-    //}
-    //alert(`Your password will contain ${length} characters.`);
-
-    // begin questions for character types for password
-    //lower = confirm(`Do you want lowercase (abc) characters in your password?`);
-    //upper = confirm(`Do you want UPPERCASE (ABC) characters in your password?`);
-    //number = confirm(`Do you want NUMBERS (123) in your password?`);
-    //special = confirm(`Do you want special characters (*%@) in your password?`);
-
-    // do while loop in case user select no options for password type
-    //while (lower === false && upper === false && number === false && special === false) {
-    //  alert(`You must select at least one option!`);
-    //  lower = confirm(`Do you want lowercase (abc) characters in your password?`);
-    //  upper = confirm(`Do you want UPPERCASE (ABC) characters in your password?`);
-    //  number = confirm(`Do you want NUMBERS (123) in your password?`);
-    //  special = confirm(`Do you want special characters (*%@) in your password?`);
-    //}
-      for (var i = 0; i < length; i) {
-        if (lower === true) {
-          password += (randomLowChar());
-          i++;
-        }
-        if (upper === true) {
-          password += (randomUpperChar());
-          i++;
-        }
-        if (number === true) {
-          password += (randomNum());
-          i++;
-        }
-        if (special === true) {
-          password += (randomSpecialChar());
-          i++;
-        }
+    length = parseInt(prompt(`Enter the desired password length from 8 to 128 characters.`));
+    while (length < 8 || length > 128 || length === `NaN`) {
+      if (isNaN(length)) {
+        alert(`You must enter a number!`);
       }
+      alert(`You must choose password length from 8 to 128 characters!`);
+    }
+    alert(`Your password will contain ${length} characters.`);
+
+    //begin questions for character types for password
+    lower = confirm(`Do you want lowercase (abc) characters in your password?`);
+    upper = confirm(`Do you want UPPERCASE (ABC) characters in your password?`);
+    number = confirm(`Do you want NUMBERS (123) in your password?`);
+    special = confirm(`Do you want special characters (*%@) in your password?`);
+
+    //do while loop in case user select no options for password type
+    while (lower === false && upper === false && number === false && special === false) {
+      alert(`You must select at least one option!`);
+      lower = confirm(`Do you want lowercase (abc) characters in your password?`);
+      upper = confirm(`Do you want UPPERCASE (ABC) characters in your password?`);
+      number = confirm(`Do you want NUMBERS (123) in your password?`);
+      special = confirm(`Do you want special characters (*%@) in your password?`);
+    }
+
+    for (var i = 0; i < length; i) {
+      if (lower === true) {
+        password += (randomLowChar());
+        i++;
+      }
+      if (upper === true) {
+        password += (randomUpperChar());
+        i++;
+      }
+      if (number === true) {
+        password += (randomNum());
+        i++;
+      }
+      if (special === true) {
+        password += (randomSpecialChar());
+        i++;
+      }
+    }
+
     //console.log(passLength);
     console.log(password);
     password = password.substring(0, length);
