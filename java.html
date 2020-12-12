@@ -12,11 +12,11 @@
   <script>
 
     // declaring variables values array for global use
-    var length = 8;
-    var lower = true;
-    var upper = true;
-    var number = true;
-    var special = true;
+    // var length = 14;
+    // var lower = true;
+    // var upper = false;
+    // var number = true;
+    // var special = false;
     var password = '';
     var passLength = 0;
 
@@ -75,25 +75,27 @@
     //  number = confirm(`Do you want NUMBERS (123) in your password?`);
     //  special = confirm(`Do you want special characters (*%@) in your password?`);
     //}
-
-    if (lower === true) {
-      password += (randomLowChar());
-      passLength++;
-    }
-    if (upper === true) {
-      password += (randomUpperChar());
-      passLength++;
-    }
-    if (number === true) {
-      password += (randomNum());
-      passLength++;
-    }
-    if (special === true) {
-      password += (randomSpecialChar());
-      passLength++;
-    }
-
-    console.log(passLength);
+      for (var i = 0; i < length; i) {
+        if (lower === true) {
+          password += (randomLowChar());
+          i++;
+        }
+        if (upper === true) {
+          password += (randomUpperChar());
+          i++;
+        }
+        if (number === true) {
+          password += (randomNum());
+          i++;
+        }
+        if (special === true) {
+          password += (randomSpecialChar());
+          i++;
+        }
+      }
+    //console.log(passLength);
+    console.log(password);
+    password = password.substring(0, length);
     console.log(password);
 
   </script>
