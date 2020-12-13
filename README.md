@@ -41,6 +41,10 @@ Please follow the link to go to the password generator app. Screenshot provided 
 
 I would like to give credit to my instructor Tish McNeel for some wonderful tutorials for HTML, CSS, and extensive coverage of Javascript to help me complete this app. 
 
+References:
+
+<https://developer.mozilla.org/en-US/>
+
 ## License
 
 There is no license for this project. 
