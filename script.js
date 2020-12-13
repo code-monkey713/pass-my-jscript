@@ -92,7 +92,7 @@ function writePassword() {
       i++;
     }
   }
-
+  password = password.substring(0,length);
   passwordEl.textContent = password;
 
 }
