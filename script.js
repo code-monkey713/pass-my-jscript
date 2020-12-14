@@ -92,10 +92,13 @@ function writePassword() {
       i++;
     }
   }
-  password = password.substring(0,length);
-  passwordEl.textContent = password;
 
+  //splicing additional characters from password to meet end user length requirements
+  password = password.substring(0, length);
+
+  //returning the randomly generated password to the main page
+  passwordEl.textContent = password;
 }
 
-//event listener to generate passwrod button
+//event listener to generate password button
 generateBtn.addEventListener('click', writePassword);
