@@ -5,7 +5,7 @@ var number;
 var special;
 var length;
 var passwordEl = document.querySelector('#password');
-var generateBtn = document.querySelector("#generate");
+var generateBtn = document.querySelector('#generate');
 
 //function to write password to the #password input
 function writePassword() {
@@ -38,7 +38,7 @@ function writePassword() {
   }
 
   function randomSpecialChar() {
-    charSet = '~`!@#$%^&*()_+=[]\{}|<>?/.,';
+    charSet = '~`!@#$%^&*()_+=[]{}|<>?/.,';
     var randomString = '';
     var randomPosition = Math.floor(Math.random() * charSet.length);
     randomString += charSet.substring(randomPosition, randomPosition + 1);
@@ -47,7 +47,9 @@ function writePassword() {
 
   //loop to restrict end user to enter number from 8 to 128 characters for password
   do {
-    length = parseInt(prompt('Enter the desired password length from 8 to 128 characters.'));
+    length = parseInt(
+      prompt('Enter the desired password length from 8 to 128 characters.')
+    );
     if (isNaN(length)) {
       alert('You must enter a number!');
     }
@@ -65,7 +67,12 @@ function writePassword() {
   special = confirm('Do you want special characters (*%@) in your password?');
 
   //while loop in case user select no options for password type
-  while (lower === false && upper === false && number === false && special === false) {
+  while (
+    lower === false &&
+    upper === false &&
+    number === false &&
+    special === false
+  ) {
     alert('You must select at least one option!');
     lower = confirm('Do you want lowercase (abc) characters in your password?');
     upper = confirm('Do you want UPPERCASE (ABC) characters in your password?');
@@ -76,19 +83,19 @@ function writePassword() {
   //generate password from end user requirements
   for (var i = 0; i < length; i) {
     if (lower === true) {
-      password += (randomLowChar());
+      password += randomLowChar();
       i++;
     }
     if (upper === true) {
-      password += (randomUpperChar());
+      password += randomUpperChar();
       i++;
     }
     if (number === true) {
-      password += (randomNum());
+      password += randomNum();
       i++;
     }
     if (special === true) {
-      password += (randomSpecialChar());
+      password += randomSpecialChar();
       i++;
     }
   }
